@@ -1,0 +1,193 @@
+/* RESET + BASE */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #faf5ff, #f3e8ff);
+    color: #2e1065;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #6d28d9, #7c3aed);
+    color: white;
+    padding: 16px 28px;
+    font-size: 22px;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* LAYOUT */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.narrow {
+    max-width: 520px;
+    margin: 50px auto;
+}
+
+/* SECTION HEADINGS */
+.section-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.section-sub {
+    color: #6b21a8;
+    margin-bottom: 25px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(109,40,217,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(109,40,217,0.25);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #6d28d9;
+}
+
+/* TEXT */
+.card p {
+    margin: 6px 0;
+    font-size: 14.5px;
+}
+
+/* BUTTONS */
+.btn {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(124,58,237,0.4);
+}
+
+.btn.outline {
+    background: white;
+    border: 2px solid #7c3aed;
+    color: #7c3aed;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    border: 1px solid #ddd6fe;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 2px rgba(124,58,237,0.2);
+}
+
+/* FLOATING ACTION BUTTONS */
+.fab {
+    position: fixed;
+    bottom: 24px;
+    padding: 15px 22px;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 14px 35px rgba(109,40,217,0.45);
+    z-index: 100;
+}
+
+.add-btn {
+    right: 24px;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.request-btn {
+    right: 190px;
+    background: linear-gradient(135deg, #9333ea, #7e22ce);
+}
+
+/* MODAL OVERLAY */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(88,28,135,0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+/* MODAL CARD */
+.modal-card {
+    background: white;
+    padding: 28px;
+    width: 92%;
+    max-width: 420px;
+    border-radius: 20px;
+    animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* HELP CARD */
+.help {
+    text-align: center;
+    background: #f5f3ff;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .fab {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .request-btn {
+        bottom: 85px;
+        right: 20px;
+    }
+}

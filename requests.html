@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Requested Services</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">LightWork</div>
+    <a href="/">Available Services</a>
+</div>
+
+<div class="container">
+    <h2>Requested Services</h2>
+
+    <div class="grid">
+        {% for r in requests %}
+        <div class="card">
+            <h3>{{ r[1] }}</h3>
+            <p><b>Customer:</b> {{ r[0] }}</p>
+            <p><b>Price:</b> ₹{{ r[2] }}</p>
+            <p><b>Contact:</b> {{ r[3] }}</p>
+            <p><b>Status:</b> {{ r[4] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

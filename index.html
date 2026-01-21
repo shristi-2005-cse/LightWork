@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LightWork</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">LightWork</div>
+</div>
+
+<!-- AVAILABLE SERVICES -->
+<div class="container">
+    <h2>Available Services</h2>
+
+    <div class="grid">
+        {% for s in services %}
+        <div class="card">
+            <h3>{{ s[2] }}</h3>
+            <p><b>Provider:</b> {{ s[0] }}</p>
+            {% if s[1] %}<p><b>Store:</b> {{ s[1] }}</p>{% endif %}
+            <p><b>Price:</b> ₹{{ s[3] }}</p>
+            <p><b>Address:</b> {{ s[4] }}</p>
+            <p><b>Contact:</b> {{ s[5] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- REQUESTED SERVICES -->
+<div class="container">
+    <h2>Requested Services</h2>
+
+    <div class="grid">
+        {% for r in requests %}
+        <div class="card">
+            <h3>{{ r[1] }}</h3>
+            <p><b>Customer:</b> {{ r[0] }}</p>
+            <p><b>Expected Price:</b> ₹{{ r[2] }}</p>
+            <p><b>Contact:</b> {{ r[3] }}</p>
+            <p><b>Status:</b> {{ r[4] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<button class="fab add-btn" onclick="openAdd()">＋ Add Service</button>
+<button class="fab request-btn" onclick="openRequest()">📩 Request Service</button>
+
+<!-- ADD SERVICE MODAL -->
+<div id="addModal" class="modal">
+    <div class="modal-card">
+        <h2>Add Service</h2>
+        <form method="POST">
+            <input type="hidden" name="form_type" value="add_service">
+
+            <input name="provider_name" placeholder="Your Name" required>
+            <input name="store_name" placeholder="Store (optional)">
+            <input name="service_name" placeholder="Service Name" required>
+            <input name="price" type="number" placeholder="Price" required>
+            <input name="address" placeholder="Address" required>
+            <input name="phone" placeholder="Phone" required>
+
+            <button class="btn full">Submit</button>
+            <button type="button" class="btn outline" onclick="closeAdd()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- REQUEST SERVICE MODAL -->
+<div id="requestModal" class="modal">
+    <div class="modal-card">
+        <h2>Request Service</h2>
+        <form method="POST">
+            <input type="hidden" name="form_type" value="request_service">
+
+            <input name="customer_name" placeholder="Your Name" required>
+            <input name="service_name" placeholder="Service Needed" required>
+            <input name="expected_price" type="number" placeholder="Expected Price" required>
+            <input name="phone" placeholder="Phone" required>
+
+            <button class="btn full">Submit</button>
+            <button type="button" class="btn outline" onclick="closeRequest()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- HELP -->
+<div class="container narrow">
+    <div class="card">
+        <h3>Need Help?</h3>
+        <p>Email: <b>lightworkh31p@gmail.com</b></p>
+    </div>
+</div>
+
+<!-- SIMPLE JS (INLINE, MINIMAL) -->
+<script>
+function openAdd() {
+    document.getElementById("addModal").style.display = "flex";
+}
+function closeAdd() {
+    document.getElementById("addModal").style.display = "none";
+}
+function openRequest() {
+    document.getElementById("requestModal").style.display = "flex";
+}
+function closeRequest() {
+    document.getElementById("requestModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

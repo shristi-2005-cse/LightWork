@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Service</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">LightWork</div>
+    <a href="/">Home</a>
+</div>
+
+<div class="container narrow">
+    <div class="card">
+        <h2>Request Service</h2>
+
+        <form method="POST">
+            <input name="service_name" value="{{ service }}" readonly>
+            <input name="price" value="{{ price }}" readonly>
+            <input name="customer_name" placeholder="Your Name" required>
+            <input name="phone" placeholder="Phone" required>
+
+            <button class="btn full">Submit Request</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

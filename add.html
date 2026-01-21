@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Service | LightWork</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">LightWork</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/help">Help</a>
+    </div>
+</div>
+
+<div class="container narrow">
+    <div class="card">
+        <h2>Add a Service</h2>
+        <p class="sub">You can add a service as an individual or a store</p>
+
+        <form method="POST">
+            <label>Your Name</label>
+            <input type="text" name="provider_name" required>
+
+            <label>Store Name (optional)</label>
+            <input type="text" name="store_name" placeholder="Leave empty if individual">
+
+            <label>Service Name</label>
+            <input type="text" name="service_name" required>
+
+            <label>Price (₹)</label>
+            <input type="number" name="price" required>
+
+            <label>Address / Area</label>
+            <input type="text" name="address" required>
+
+            <label>Phone Number</label>
+            <input type="text" name="phone" required>
+
+            <button class="btn full">Add Service</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
